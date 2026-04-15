@@ -5,28 +5,34 @@
 <title>QCM - La découverte du blason</title>
 
 <style>
-html {
+/* Plein écran réel sur mobile */
+html, body {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
 body {
-    margin: 0;
-    min-height: 100%;
+    min-height: 100vh;
+    min-height: 100dvh;
     font-family: 'Segoe UI', sans-serif;
     background: linear-gradient(180deg, #a8c6d8, #eaf4f4);
+    background-attachment: fixed;
     text-align: center;
     color: #2f3e4e;
 }
 
+/* Conteneur */
 .container {
     max-width: 600px;
     margin: auto;
-    padding: 30px 20px;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 /* Carte principale */
 .card {
-    background: white;
+    background: rgba(255,255,255,0.85); /* effet sans blanc agressif */
     padding: 25px;
     border-radius: 20px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.1);
@@ -46,8 +52,8 @@ body {
     max-width: 250px;
     margin: 15px auto;
     display: block;
-    border-radius: 15px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+    border-radius: 0; /* enlève effet contour */
+    box-shadow: none;
 }
 
 /* Question */
@@ -106,16 +112,17 @@ h1 {
             Devant ce monument aux morts, Garance s’arrête et observe un blason au sol.
         </p>
 
-        <!-- 📸 Image -->
+        <!-- Image -->
         <img src="BlasonSTE.png" alt="Blason du monument" class="blason">
 
         <h1>
         🛡️ Que représente ce blason ?
         </h1>
 
+        <!-- Réponses corrigées -->
         <button class="choice" onclick="wrongAnswer()">Le blason de l'Aubrac</button>
-        <button class="choice" onclick="wrongAnswer()">Le blason du village</button>
-        <button class="choice" onclick="correctAnswer()">Le blason du Roi de France</button>
+        <button class="choice" onclick="correctAnswer()">Le blason du village</button>
+        <button class="choice" onclick="wrongAnswer()">Le blason du Roi de France</button>
 
         <div id="success" class="success">
             ✅ Bonne réponse !<br><br>
